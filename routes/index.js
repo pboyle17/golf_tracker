@@ -16,4 +16,9 @@ router.get('/new_round',function(req,res){
 
 });
 
+router.post('/',function(req,res){
+  res.send('post sent to the home page');
+  consle.log(req.body);
+});
+
 module.exports = router;
