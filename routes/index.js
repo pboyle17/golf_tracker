@@ -9,17 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new_round',function(req,res){
-  res.render('new_round', { greeting:'Hello, welcome to golf tracker, where would you like to play golf?'});
+  res.render('new_round', {
+    greeting:'Hello, welcome to golf tracker, where would you like to play golf?',
+    user:'Paul Boyle'
+  });
+  
 });
-
-router.get('/login',function(req,res){
-  res.send('this is the login page');
-});
-
-router.get('/sign_up',function(req,res){
-  res.send('this is the sign up page!');
-});
-
-
 
 module.exports = router;
