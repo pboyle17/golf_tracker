@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Welcome to Golf Tracker!',
-            description: 'an simple golf tracking applictaion incorporating shot value to help golfers understand how well a shot was executed based on millions of data points recorded from pga tour golf tournaments'
+            description: 'an simple golf tracking applictaion incorporating shot value to help golfers understand how well a  given shot was executed based on millions of data points recorded from pga tour golf tournaments'
  });
 });
 
@@ -13,7 +13,7 @@ router.get('/new_round',function(req,res){
     greeting:'Hello, welcome to golf tracker, where would you like to play golf?',
     user:'Paul Boyle'
   });
-  
+
 });
 
 module.exports = router;
