@@ -3,6 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var strokes={};
 var putts={};
+var golfer = require('../models/Golfer');
 
 
 fs.readFile('strokes_gained.json',function(err,data){
@@ -33,6 +34,62 @@ router.get('/strokes',function(req,res){
 
 router.get('/putts',function(req,res){
   res.send(putts);
+});
+
+router.get('/golfers',function(req,res){
+  golfer.find(function(err,golfers){
+    res.json(golfers);
+  });
+});
+
+router.post('/golfers',function(req,res){
+  golfer.create(req.body, function(err,golfer){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(golfer);
+    }
+  });
+});
+
+router.get('/golfers/:id',function(req,res){
+    golfer.findById(req.params.id,function(err,golfer){
+      if(err){
+        console.log(err);
+      } else {
+        res.json(golfer);
+      }
+  });
+});
+
+router.put('/golfers/:id',function(req,res){
+  golfer.findByIdAndUpdate(req.params.id,req.body,function(err,golfer){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(golfer)
+    }
+  });
+});
+
+router.patch('/golfers/:id',function(req,res){
+  golfer.findByIdAndUpdate(req.params.id,req.body,function(err,golfer){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(golfer)
+    }
+  });
+});
+
+router.delete('/golfers/:id',function(req,res){
+  golfer.findByIdAndRemove(req.params.id,req.body,function(err,golfer){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(golfer);
+    }
+  });
 });
 
 module.exports = router;

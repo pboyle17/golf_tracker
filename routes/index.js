@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var golfer = require('../models/Golfer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,12 +14,6 @@ router.get('/new_round',function(req,res){
     greeting:'Hello, welcome to golf tracker, where would you like to play golf?',
     user:'Paul Boyle'
   });
-
-});
-
-router.post('/',function(req,res){
-  res.send('post sent to the home page');
-  consle.log(req.body);
 });
 
 module.exports = router;
