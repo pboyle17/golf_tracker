@@ -16,4 +16,14 @@ router.get('/new_round',function(req,res){
   });
 });
 
+router.post('/',function(req,res){
+  golfer.create(function(err,golfer){
+    if(err){
+      console.log(err);
+    } else {
+      res.render('post');
+    }
+  })
+});
+
 module.exports = router;
