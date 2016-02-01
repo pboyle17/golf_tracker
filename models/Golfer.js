@@ -6,6 +6,7 @@ var GolferSchema = new mongoose.Schema({
     course:String,
     hole1:String,
     hole2:String
+
   }
 });
 

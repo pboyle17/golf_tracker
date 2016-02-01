@@ -17,6 +17,7 @@ router.get('/new_round',function(req,res){
 });
 
 router.post('/',function(req,res){
+  console.log('req.body',res.body);
   golfer.create(function(err,golfer){
     if(err){
       console.log(err);
